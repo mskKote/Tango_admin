@@ -4,9 +4,9 @@ const styles = {
   divCard: {
     height: "40vh",
   },
-  divCardHeader: {
-    margin: ".3rem .5rem 1rem .5rem",
-  },
+  // divCardHeader: {
+  //   margin: ".3rem .5rem 1rem .5rem",
+  // },
   divCardCont: {
     width: "100%",
     height: "60%",
@@ -20,7 +20,7 @@ const styles = {
     height: "100%",
   },
   inputFSpan: {
-    margin: "20% auto",
+    margin: "10% auto",
   },
 };
 
@@ -28,7 +28,7 @@ export default function AddFilm() {
   return (
     <div className="card" style={styles.divCard}>
       <div className="card-header">
-        <h3 style={styles.divCardHeader}>Добавление фильма</h3>
+        <p className="card-header-title">Добавление фильма</p>
       </div>
       <div className="card-container" style={styles.divCardCont}>
         <div style={styles.divCardMedia}>
@@ -46,6 +46,9 @@ export default function AddFilm() {
             </label>
           </div>
         </div>
+      </div>
+      <div className="card-container">
+        <p>Описание\теги\блабла</p>
       </div>
     </div>
   );
