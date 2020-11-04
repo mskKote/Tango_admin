@@ -1,5 +1,9 @@
 import React from "react";
-import AdminPanel from "./admin-panel/AdminPanel";
+
+import Statistics from "./admin-panel/Statistics";
+import AddFilm from "./admin-panel/AddFilm";
+import AllFIlms from "./admin-panel/AllFilms";
+
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 
 const styles = {
@@ -15,14 +19,21 @@ function App() {
         <div className="navbar-menu">
           <div className="navbar-start">
             <Link to="/" className="navbar-item">Главная</Link>
-
-            <Link to="/admin-panel" className="navbar-item">Административная панель</Link>
+            <Link to="/statistics" className="navbar-item">Статистика</Link>
+            <Link to="/add-film" className="navbar-item">Добавить фильм</Link>
+            <Link to="/films" className="navbar-item">Редактирование</Link>
           </div>
         </div>
       </div>
 
       <div style={styles.divCont}>
-        <Route path="/admin-panel" component={AdminPanel} />
+        <Route path="/statistics" component={Statistics} />
+      </div>
+      <div style={styles.divCont}>
+        <Route path="/add-film" component={AddFilm} />
+      </div>
+      <div style={styles.divCont}>
+        <Route path="/films" component={AllFIlms} />
       </div>
     </Router>
   );
