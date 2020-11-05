@@ -1,10 +1,12 @@
 import React from "react";
 
-import Statistics from "./admin-panel/Statistics";
-import AddFilm from "./admin-panel/AddFilm";
-import AllFIlms from "./admin-panel/AllFilms";
+import Statistics from "./pages/Statistics";
+import AddFilm    from "./pages/AddFilm";
+import AllFIlms   from "./pages/AllFilms";
+import Users      from "./pages/Users";
 
-import { Route, BrowserRouter as Router, Link } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import Navbar from './components/Navbar';
 
 const styles = {
   divCont: {
@@ -12,28 +14,18 @@ const styles = {
   }
 }
 
-function App() {
-  return (
+export function App() {
+    return (
     <Router>
-      <div className="navbar" role="navigation">
-        <div className="navbar-menu">
-          <div className="navbar-start">
-            <Link to="/" className="navbar-item">Главная</Link>
-            <Link to="/statistics" className="navbar-item">Статистика</Link>
-            <Link to="/add-film" className="navbar-item">Добавить фильм</Link>
-            <Link to="/films" className="navbar-item">Редактирование</Link>
-          </div>
-        </div>
-      </div>
+      <Navbar />
 
       <div style={styles.divCont}>
-        <Route path="/statistics" component={Statistics} />
-      </div>
-      <div style={styles.divCont}>
-        <Route path="/add-film" component={AddFilm} />
-      </div>
-      <div style={styles.divCont}>
-        <Route path="/films" component={AllFIlms} />
+        <Switch>
+          <Route path="/statistics" component={Statistics} />
+          <Route path="/add-film"   component={AddFilm} />
+          <Route path="/films"      component={AllFIlms} />
+          <Route path="/users"      component={Users} />
+        </Switch>
       </div>
     </Router>
   );
