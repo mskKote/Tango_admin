@@ -8,21 +8,13 @@ export const Navbar = () => (
     </button>
     <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-                <NavLink to="/statistics"  className="nav-link ml-3">Статистика</NavLink></li>
-            <li className="nav-item">
-                <NavLink to="/add-film"    className="nav-link ml-3">Добавить фильм</NavLink></li>
-            <li className="nav-item">
-                <NavLink to="/films"       className="nav-link ml-3">Редактирование</NavLink></li>
-            <li className="nav-item">
-                <NavLink to="/users"       className="nav-link ml-3">Пользователи</NavLink></li>
+            <li className="nav-item"><NavLink to="/statistics"  className="nav-link ml-3">Статистика</NavLink></li>
+            <li className="nav-item"><NavLink to="/add-film"    className="nav-link ml-3">Добавить фильм</NavLink></li>
+            <li className="nav-item"><NavLink to="/films"       className="nav-link ml-3">Редактирование</NavLink></li>
+            <li className="nav-item"><NavLink to="/users"       className="nav-link ml-3">Пользователи</NavLink></li>
         </ul>
-        <NavLink className="btn btn-outline-info my-2 my-sm-0" to="/login">
-            Login
-        </NavLink>
-        <NavLink className="btn btn-outline-info my-2 my-sm-0 ml-3" to="/register">
-            Register
-        </NavLink>
+        <NavLink to="/login"    className="btn btn-outline-info my-2 my-sm-0">Login</NavLink>
+        <NavLink to="/register" className="btn btn-outline-info my-2 my-sm-0 ml-3">Register</NavLink>
     </div>
 </nav>
 );
